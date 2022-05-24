@@ -51,10 +51,13 @@ for channel_num in $( seq 0 $channel_count );do
 				if [ $local_balance -lt $remote_balance ]
 				then
 				echo "You should raise the channel fee of $chan_id"
+				exit 1
 				fi
 			else
 			# test with this uncommented
 			#echo "Channel fee of $chan_id with remote_bal:$remote_balance local_bal:$local_balance is already $chan_fee"
+
+			exit 0
 			fi
 	fi
 done
