@@ -15,10 +15,10 @@ crontab -e
 Prints useful information about fees set on our side
 
 Output (header added for documentation):
-
+~~~
 Node Public Key							   Node Alias			
 0217890e3aad8d35bc054f43acc00084b25229ecff0ab68debd82883ad65ee8266 "1ML.com node ALPHA"    	MinHTLC:1000		FeeBase:1000		FeeRate:1		Disabled:false	813832510099346259
-
+~~~
 
 ## fee_checker
 This doesn't work well yet
