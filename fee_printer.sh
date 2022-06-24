@@ -55,13 +55,13 @@ fee_printer () {
 			node2_pub=$(lncli getchaninfo $chan_id|jq -j ".node2_pub")
 			echo -en "$node2_pub "
 			get_nodealias $node2_pub
-			get_fees 2
+			get_fees 1
 			get_chanpoint $chan_id
 			echo
 	else
 	       	echo -en "$node1_pub "
 	        get_nodealias $node1_pub
-		get_fees 1
+		get_fees 2
 		get_chanpoint $chan_id
 		echo
 	fi
