@@ -13,6 +13,7 @@ get_nodealias (){
 	# arg1 node_pub
 	node_alias=$(lncli getnodeinfo $1|jq -j '.node|.alias')
 	node_alias=${node_alias//[^a-zA-Z0-9_\[\]. ]/}
+	node_alias=\"$node_alias\"
 	printf "%-24s" "$node_alias"
 	#echo -n $node_alias
 }
