@@ -1,0 +1,5 @@
+# shows forwards for day, week, month, year
+alias fwdd="lncli fwdinghistory --start_time -1d --end_time $(date '+%s')|jq '.last_offset_index'"
+alias fwdw="lncli fwdinghistory --start_time -1w --end_time $(date '+%s')|jq '.last_offset_index'"
+alias fwdm="lncli fwdinghistory --start_time -1M --end_time $(date '+%s')|jq '.last_offset_index'"
+alias fwdy="lncli fwdinghistory --start_time -1y --end_time $(date '+%s')|jq '.last_offset_index'"
