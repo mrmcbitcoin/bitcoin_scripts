@@ -8,6 +8,11 @@
 # Notes: takes no args, just run it like: "bash fee_printer.sh"
 #
 
+get_chanpoint (){
+	# arg1 chan_id
+	chan_point="$(lncli getchaninfo $1|jq -j '.chan_point')"
+	echo -n "${chan_point:0:4}..${chan_point:60:6}"
+}
 
 get_nodealias (){
 	# arg1 node_pub
@@ -51,12 +56,14 @@ fee_printer () {
 			echo -en "$node2_pub "
 			get_nodealias $node2_pub
 			get_fees 2
-			echo $chan_id
+			get_chanpoint $chan_id
+			echo
 	else
 	       	echo -en "$node1_pub "
 	        get_nodealias $node1_pub
 		get_fees 1
-		echo $chan_id
+		get_chanpoint $chan_id
+		echo
 	fi
 	done
 }
